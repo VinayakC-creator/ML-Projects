@@ -8,10 +8,15 @@ This repository contains various **Machine Learning projects**, including **Diab
 ## 📂 Project Structure  
 📦 ML-Projects
 ┣ 📜 app.py # streamlit app for model deployment
+
 ┣ 📜 diabetes predictor.ipynb # Jupyter Notebook for model training
+
 ┣ 📜 diabetes.csv # Dataset used for training
+
 ┣ 📜 diabetes_model.sav # Trained Machine Learning model
+
 ┣ 📜 requirements.txt # Dependencies to install
+
 ┗ 📜 README.md # Project documentation
 
 
