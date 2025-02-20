@@ -1,10 +1,15 @@
 import pickle
 import streamlit as st
+import pandas as pd
+import numpy as np
+from sklearn.metrics import accuracy_score
 
 st.set_page_config(page_title="Diabetes Classifier", page_icon="🌺", layout="centered")
 
 # Load the model
 diabetes_model_path = r"C:\Users\msi\Downloads\project2\diabetes_model.sav"
+data_path = r"C:\Users\msi\Downloads\project2\diabetes.csv"
+
 try:
     with open(diabetes_model_path, 'rb') as model_file:
         diabetes_model = pickle.load(model_file)
@@ -13,6 +18,19 @@ except Exception as e:
     st.stop()
 
 st.title("Diabetes Prediction using Machine Learning")
+
+# Load dataset
+data = pd.read_csv(data_path)
+X = data.drop(columns=['Outcome'])
+y = data['Outcome']
+
+# Calculate accuracy
+try:
+    y_pred = diabetes_model.predict(X)
+    accuracy = accuracy_score(y, y_pred)
+    st.subheader(f"Model Accuracy: {accuracy:.2f}")
+except Exception as e:
+    st.error(f"Error calculating accuracy: {e}")
 
 # Input fields
 col1, col2, col3 = st.columns(3)
@@ -34,17 +52,25 @@ with col3:
 # Prediction Button
 if st.button("Predict"):
     try:
-        input_data = [[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age]]
+        input_data = np.array([[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age]])
         prediction = diabetes_model.predict(input_data)
 
         if prediction[0] == 1:
             st.error("You have Diabetes")
         else:
             st.success("You don't have Diabetes")
-
     except Exception as e:
         st.error(f"Prediction Error: {e}")
 
 # Clear Button
 if st.button("Clear Inputs"):
     st.experimental_rerun()
+
+
+if st.button("Show model accuracy"):
+    test_data = pd.read_csv("C:\\Users\\msi\\Downloads\\project2\\diabetes.csv")
+    X_test = test_data.drop(columns=['Outcome'])
+    y_test = test_data['Outcome']
+    y_pred = diabetes_model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    st.write(f"Model Accuracy: {accuracy:.2f}")
