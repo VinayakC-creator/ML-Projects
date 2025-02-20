@@ -23,7 +23,7 @@ This repository contains various **Machine Learning projects**, including **Diab
 
 ## ⚡ Installation & Usage  
 ### 1️⃣ Clone the Repository  
-git clone https://github.com/YourUsername/ML-Projects.git  
+git clone https://github.com/VinayakC-creator/ML-Projects.git  
 cd ML-Projects
 2️⃣ Install Dependencies
 pip install -r requirements.txt
