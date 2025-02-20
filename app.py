@@ -8,7 +8,7 @@ st.set_page_config(page_title="Diabetes Classifier", page_icon="🌺", layout="c
 
 # Load the model
 diabetes_model_path = r"diabetes_model.sav"
-data_path = r"C:\Users\msi\Downloads\project2\diabetes.csv"
+data_path = r"diabetes.csv"
 
 try:
     with open(diabetes_model_path, 'rb') as model_file:
