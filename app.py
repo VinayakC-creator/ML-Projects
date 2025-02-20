@@ -56,9 +56,6 @@ if st.button("Predict"):
     except Exception as e:
         st.error(f"Prediction Error: {e}")
 
-# Clear Button
-if st.button("Clear Inputs"):
-    st.experimental_rerun()
 
 
 if st.button("Show model accuracy"):
