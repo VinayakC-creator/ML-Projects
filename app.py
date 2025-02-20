@@ -68,7 +68,7 @@ if st.button("Clear Inputs"):
 
 
 if st.button("Show model accuracy"):
-    test_data = pd.read_csv("C:\\Users\\msi\\Downloads\\project2\\diabetes.csv")
+    test_data = pd.read_csv("diabetes.csv")
     X_test = test_data.drop(columns=['Outcome'])
     y_test = test_data['Outcome']
     y_pred = diabetes_model.predict(X_test)
