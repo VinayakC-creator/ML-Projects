@@ -24,13 +24,7 @@ data = pd.read_csv(data_path)
 X = data.drop(columns=['Outcome'])
 y = data['Outcome']
 
-# Calculate accuracy
-try:
-    y_pred = diabetes_model.predict(X)
-    accuracy = accuracy_score(y, y_pred)
-    st.subheader(f"Model Accuracy: {accuracy:.2f}")
-except Exception as e:
-    st.error(f"Error calculating accuracy: {e}")
+
 
 # Input fields
 col1, col2, col3 = st.columns(3)
