@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score
 st.set_page_config(page_title="Diabetes Classifier", page_icon="🌺", layout="centered")
 
 # Load the model
-diabetes_model_path = r"C:\Users\msi\Downloads\project2\diabetes_model.sav"
+diabetes_model_path = r"diabetes_model.sav"
 data_path = r"C:\Users\msi\Downloads\project2\diabetes.csv"
 
 try:
