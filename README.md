@@ -39,11 +39,20 @@ python app.py
 
 
 📊 Model Performance
+
 Accuracy: 85%
+
 Algorithm Used: Random Forest
-Dataset: PIMA Diabetes Dataset
+
+Dataset:  Diabetes Dataset
+
 🤝 Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## 📜 License  
+
+You are free to use, modify, and distribute this project for personal and commercial purposes.  
+
 
 ⭐ If you found this project useful, please give it a star! ⭐
 
